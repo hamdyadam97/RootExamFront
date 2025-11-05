@@ -1,0 +1,178 @@
+
+// phone input
+
+.phone-input {
+    text-align: start;
+    direction: ltr;
+    padding-right: 0 !important;
+    padding-inline-end: .75rem !important;
+    padding-inline-start: 100px !important;
+    font-size: 15px;
+    &::placeholder {
+        text-align: end;
+    }
+}
+
+.vti__search_box {
+    margin: 5px !important;
+    width: 97% !important;
+    text-align: right;
+    direction: rtl;
+}
+
+.modal {
+    .phone-input {
+        padding-right: 0 !important;
+        padding-inline-end: .75rem !important;
+        padding-inline-start: 100px !important;
+        font-size: 15px;
+    }
+}
+
+.iti {
+    width: 100%;
+}
+
+// arrow 
+.iti__arrow {
+    border: none;
+    position: relative;
+    width: 10px;
+    height: 7.33px;
+    margin-top: 3px;
+    &:after {
+        content: "";
+        position: absolute;
+        inset-inline-start: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 7.33px;
+        background: url(../img/select-tel-arrow.svg);
+        background-repeat: no-repeat;
+        background-size: 10px 7.33px;
+    }
+}
+
+.iti__selected-flag {
+    direction: ltr !important;
+    outline: none;
+    padding-inline-start: 20px;
+    padding-inline-end: 0;
+}
+
+.iti__country-name {
+    font-size: 12px;
+}
+
+.iti__country-list {
+    inset-inline-end: 0;
+    inset-inline-start: auto;
+    max-width: 290px;
+    overflow-x: scroll !important;
+    z-index: 21;
+    text-align: start;
+}
+
+
+.iti__country-name,
+.iti__flag-box {
+    margin-inline-end: 6px;
+}
+
+.iti__country {
+    direction: ltr;
+    text-align: start;
+}
+
+.iti--separate-dial-code .iti__selected-dial-code {
+    color: #232424;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.iti--separate-dial-code .iti__selected-flag {
+    background: transparent;
+}
+
+.iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
+    background: transparent;
+}
+
+/* tel responsive */
+@media (max-width: 1024px) {
+    .iti__country-list {
+        inset-inline-end: 0;
+        inset-inline-start: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .iti__country-list {
+        inset-inline-start: 0;
+        inset-inline-end: auto;
+    }
+}
+
+
+
+.vue-tel-input  {
+    direction: ltr;
+    font-size: 15px;
+    // height: 45px;
+    width: 100%;
+    border-radius: 8px !important;
+    border: 1px solid #DDDDDD !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 12px 22px !important;
+}
+
+.vti__dropdown-item strong {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.vti__input {
+    border-radius: 8px !important;
+    padding-inline-end: 0.75rem !important; 
+    direction: ltr !important;
+}
+
+.vti__input:disabled {
+    border-radius: 0 !important;
+}
+
+.vti__input::placeholder {
+    text-align: end !important;
+    color: #B9B9B9 !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+}
+
+.vue-tel-input:focus-within {
+    border-color: #EAECEE;
+}
+
+.vti__selection .vti__country-code {
+    color: #232424;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 0 2px;
+}
+
+.vti__dropdown-list {
+    width: 358px !important;
+}
+
+.vti__dropdown-list.below {
+    top: 44px !important;
+}
+
+.vti__dropdown:hover {
+    background-color: inherit !important;
+}
+
+.vti__dropdown{
+    padding: 0 !important;
+}
