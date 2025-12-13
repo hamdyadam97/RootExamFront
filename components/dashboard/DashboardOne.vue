@@ -5,6 +5,12 @@
         <h1 class="text-30 lh-12 fw-700">Dashboard</h1>
       </div>
     </div>
+   <ClientOnly>
+<ExamWatermark
+  :text="`${userName || 'no'} • Dashboard`"
+/>
+
+</ClientOnly>
 
     <div class="row y-gap-30">
       <div v-for="(elm, i) in states" :key="i" class="col-xl-6 col-md-6">
@@ -163,6 +169,11 @@
 <script setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faTags, faLayerGroup, faCertificate } from "@fortawesome/free-solid-svg-icons";
+import ExamWatermark from '~/components/layout/component/ExamWatermark.vue'
+
+const storedUser = localStorage.getItem('user');
+const user = storedUser ? JSON.parse(storedUser) : null;
+console.log(user);
 
 
 const currentTab = ref('categories');
@@ -170,6 +181,13 @@ const currentTab = ref('categories');
 const setCurrentTab = (tab) => {
   currentTab.value = tab;
 };
+
+const userName = computed(() => {
+ 
+  return `${user.first_name || ''} ${user.mobile_number || ''}`.trim() || 'Guest';
+});
+
+
 
 const states = reactive([
   {

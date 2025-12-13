@@ -5,6 +5,12 @@
           <h1 class="text-30 lh-12 fw-700">Subscriptions</h1>
         </div>
       </div> -->
+         <ClientOnly>
+<ExamWatermark
+  :text="`${userName || 'no'} • Dashboard`"
+/>
+
+</ClientOnly>
 
       <div class="row y-gap-30">
         <div class="col-12">
@@ -106,6 +112,20 @@ onMounted(async () => {
 definePageMeta({
   layout: 'dashboard'
 })
+
+
+import ExamWatermark from '~/components/layout/component/ExamWatermark.vue'
+
+const storedUser = localStorage.getItem('user');
+const user = storedUser ? JSON.parse(storedUser) : null;
+console.log(user);
+
+
+
+const userName = computed(() => {
+ 
+  return `${user.first_name || ''} ${user.mobile_number || ''}`.trim() || 'Guest';
+});
 </script>
 
 <style lang="scss" scoped></style>

@@ -1,5 +1,11 @@
 <template>
   <div class="dashboard__content bg-light-4">
+       <ClientOnly>
+<ExamWatermark
+  :text="`${userName || 'no'} • Dashboard`"
+/>
+
+</ClientOnly>
     <div class="row pb-50 mb-10">
       <div class="col-auto">
         <h1 class="text-30 lh-12 fw-700">Exam Questions</h1>
@@ -401,6 +407,16 @@ const setTimer = (t) => {
     // }
   }
 }
+
+import ExamWatermark from '~/components/layout/component/ExamWatermark.vue'
+
+const storedUser = localStorage.getItem('user');
+const userstore = storedUser ? JSON.parse(storedUser) : null;
+
+const userName = computed(() => {
+ 
+  return `${userstore.first_name || ''} ${userstore.mobile_number || ''}`.trim() || 'Guest';
+});
 </script>
 
 <style lang="scss" scoped>

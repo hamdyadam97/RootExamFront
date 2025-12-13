@@ -291,6 +291,8 @@ export const useAuthStore = defineStore('auth', {
             const user = useCookie('user');
             user.value = (data?.user || '');
             this.user = (data?.user || '');
+localStorage.setItem('user', JSON.stringify(data.user));
+
         },
 
         setToken(data: any) {
