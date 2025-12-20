@@ -53,6 +53,22 @@
         </div>
 
         <div class="col-md-6">
+          <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Specialization</label>
+          <input required type="text" placeholder="Specialization" v-model="form.specialization" />
+        </div>
+
+        <div class="col-md-6">
+          <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Governorate</label>
+          <input required type="text" placeholder="Governorate" v-model="form.governorate" />
+        </div>
+
+        <div class="col-md-6">
+          <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Date of Birth</label>
+          <input class="form-input" required type="date" max="2007-12-31" v-model="form.birth_date" />
+        </div>
+
+
+        <div class="col-md-6">
           <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Mobile</label>
           <PhoneBox :init_mobile="form.mobile_number" :init_mobile_country_code="form.mobile_country_code"
             @change="updateTeleInput" />
@@ -87,6 +103,9 @@ const form = reactive({
   mobile_country_code: null,
   dial_code: null,
   mobile_number: null,
+  specialization: null,
+  governorate: null,
+  birth_date: null,
 })
 
 const user = computed(() => props.user);
@@ -120,6 +139,10 @@ const handleImageUpload = () => {
 };
 
 const handleSubmit = () => {
+  if (new Date(form.birth_date) >= new Date("2008-01-01")) {
+    alert("تاريخ الميلاد يجب أن يكون قبل سنة 2008");
+    return;
+  }
 
   const formData = new FormData();
 
@@ -161,5 +184,21 @@ const fillFormData = () => {
   form.mobile_country_code = user.value?.mobile_country_code;
   form.dial_code = user.value?.dial_code;
   form.mobile_number = user.value?.mobile_number;
+
+  
+  form.specialization = user.value?.specialization;
+  form.governorate = user.value?.governorate;
+  form.birth_date = user.value?.birth_date;
 }
 </script>
+<style>
+  .form-input {
+  width: 100%;
+  height: 54px;
+  padding: 0 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fff;
+}
+</style>

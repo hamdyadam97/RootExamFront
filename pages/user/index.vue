@@ -70,13 +70,11 @@ let overlay = null;
     }
   };
 
-  // عند فقد التركيز (Alt+Tab أو PrintScreen)
   window.addEventListener('blur', showOverlay);
   window.addEventListener('focus', hideOverlay);
 
-  // عند فتح أدوات المطور (تقريبية)
-  let devtoolsOpen = false;
-  const threshold = 160;
+  let devtoolsOpen = true;
+const threshold = 160;
   setInterval(() => {
     const widthThreshold = window.outerWidth - window.innerWidth > threshold;
     const heightThreshold = window.outerHeight - window.innerHeight > threshold;

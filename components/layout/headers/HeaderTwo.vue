@@ -1,37 +1,7 @@
 <template>
   <header :class="`header -type-5 js-header ${scrollPosition > 40 || !is_home_route ? 'bg-dark-1' : ''
     }`">
-    <!-- <div class="d-flex items-center bg-purple-1 py-10">
-      <div class="container">
-        <div class="row y-gap-5 justify-between items-center">
-          <div class="col-auto">
-            <div class="d-flex x-gap-40 y-gap-10 items-center">
-              <div class="d-flex items-center text-white md:d-none">
-                <div class="icon-email mr-10"></div>
-                <div class="text13 lh-1">(00) 242 844 39 88</div>
-              </div>
-              <div class="d-flex items-center text-white">
-                <div class="icon-email mr-10"></div>
-                <div class="text13 lh-1">hello@educrat.com</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-auto">
-            <div class="d-flex x-gap-30 y-gap-10">
-              <div>
-                <div class="d-flex x-gap-20 items-center text-white">
-                  <Socials textSize="text-11" />
-                </div>
-              </div>
-              <div class="d-flex items-center text-white text-13 sm:d-none">
-                English <i class="icon-chevron-down text-9 ml-10"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
+   
 
     <div class="container py-10">
       <div class="row justify-between items-center">

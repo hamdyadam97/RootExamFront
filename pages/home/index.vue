@@ -1,24 +1,7 @@
 <template>
   <!-- <HeroFive /> -->
-  <HeroTwo />
-  <LearningPathFive />
-  <Categories v-if="categories && categories.length" :categories="categories" :default_image="default_image" />
-  <Instructors  v-if="instructors && instructors.length" :instructors="instructors"
-    :default_image="default_image" />
+  
 
-  <WhyUs />
-  <TestimonialsEight />
-  <Services />
-  <Faqs />
-  <!-- backgroundColor="bg-beige-1" -->
-  <!-- <Testimonials /> -->
-  <Events v-if="blogs && blogs.length"  :blogs="blogs" :default_image="default_image"/>
-  <Online_Appointment/>
-  <!-- <Contacts/> -->
-  <!-- <Pricing /> -->
-  <!-- <CategoriesFive :categories="categories" :default_image="default_image" /> -->
-  <!-- <BlogsFive :blogs="blogs" :default_image="default_image" /> -->
-  <!-- <RecomentationFive /> -->
 </template>
 
 <script setup>
@@ -39,7 +22,6 @@ import Instructors from "@/components/common/Instructors";
 import Events from "@/components/homes/Events";
 import Online_Appointment from "@/components/homes/Online_Appointment";
 // import Contacts from "@/components/homes/Contacts";
-
 // import CategoriesFive from "@/components/homes/categories/CategoriesFive";
 // import Pricing from "@/components/common/Pricing";
 // import BlogsFive from "@/components/homes/blogs/BlogsFive";
