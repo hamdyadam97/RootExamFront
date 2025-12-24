@@ -21,7 +21,7 @@
           <div class="col-lg-6 mx-auto">
             <div class="">
               <div class="pt-30 pb-15 bg-white border-light rounded-8 bg-light-4">
-                <h5 class="px-30 text-20 fw-500">Your order</h5>
+                <h5 class="px-30 text-20 fw-500">Yourkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj order</h5>
 
                 <div v-if="package_object" :class="[
                   'd-flex justify-between',
@@ -159,18 +159,35 @@ const checkCouponHandler = async () => {
 const subscribeHandler = async () => {
   try {
     loading.value = true;
-    let res = await subscribe(package_id.value, coupon.value);
-    if (res.url) {
-      window.location = (res.url);
-    }else{
-      navigateTo('/user/subscriptions')
-    }
-  } catch ($e) {
 
+    let res = await subscribe(package_id.value, coupon.value);
+
+    // 🔴 لو الحساب مش مكتمل
+    if (res?.profile_completed === false) {
+      useNuxtApp().$toastr.error('يرجى استكمال بيانات الحساب قبل الاشتراك');
+      navigateTo('/user/profile'); // صفحة تعديل البيانات
+      return;
+    }
+
+    // 🔵 تحويل للدفع
+    if (res.url) {
+      //window.location = res.url;
+    } else {
+     navigateTo('/user/subscriptions');
+    }
+
+  } catch (e) {
+    // في حالة API رجع error
+    if (e?.response?.data?.message) {
+      useNuxtApp().$toastr.error(e.response.data.message);
+    } else {
+      useNuxtApp().$toastr.error('Something went wrong');
+    }
   } finally {
     loading.value = false;
   }
-}
+};
+
 
 </script>
 

@@ -7,7 +7,7 @@
       </div> -->
          <ClientOnly>
 <ExamWatermark
-  :text="`${userName || 'no'} • Dashboard`"
+  :text="`${userName || 'no'}`"
 />
 
 </ClientOnly>

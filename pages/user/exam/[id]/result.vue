@@ -2,7 +2,7 @@
     <div class="dashboard__content bg-light-4">
            <ClientOnly>
 <ExamWatermark
-  :text="`${userName || 'no'} • Dashboard`"
+  :text="`${userName || 'no'} `"
 />
 
 </ClientOnly>

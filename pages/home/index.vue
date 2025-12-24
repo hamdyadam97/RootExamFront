@@ -1,7 +1,25 @@
 <template>
   <!-- <HeroFive /> -->
   
+ <HeroTwo />
+  <LearningPathFive />
+  <Categories v-if="categories && categories.length" :categories="categories" :default_image="default_image" />
+  <Instructors  v-if="instructors && instructors.length" :instructors="instructors"
+    :default_image="default_image" />
 
+  <WhyUs />
+  <TestimonialsEight />
+  <Services />
+  <Faqs />
+  <!-- backgroundColor="bg-beige-1" -->
+  <!-- <Testimonials /> -->
+  <Events v-if="blogs && blogs.length"  :blogs="blogs" :default_image="default_image"/>
+  <Online_Appointment/>
+  <!-- <Contacts/> -->
+  <!-- <Pricing /> -->
+  <!-- <CategoriesFive :categories="categories" :default_image="default_image" /> -->
+  <!-- <BlogsFive :blogs="blogs" :default_image="default_image" /> -->
+  <!-- <RecomentationFive /> -->
 </template>
 
 <script setup>
